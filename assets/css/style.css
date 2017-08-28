@@ -14,6 +14,11 @@
     GENERAL STYLES
 ==================================================*/
 
+@font-face {
+  font-family: "geobats";
+  src: url(../../geobats/geobats.ttf)  format("truetype"); /* Safari, Android, iOS */
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
@@ -110,7 +115,7 @@ section {
   font-size: 80px !important;
   font-weight: 900!important;
   color: #fff!important;
-  padding: 250px 20px 10px 20px;
+  padding: 300px 20px 10px 20px;
 }
 
 .head-sub-main {
