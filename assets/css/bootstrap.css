@@ -3784,11 +3784,36 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-nav {
   margin: 7.5px -15px;
+  height: 60px;
+  text-align: center;
+  outline: 0;
 }
+
+.navbar-nav > li {
+  font-size: 150%;
+  height: 60px;
+  width: 150px;
+  outline: 0;
+}
+
+.navbar-nav > li:hover {
+  background-repeat: repeat-x;
+  background-image: url("../img/nav_background.png");
+  outline: 0;
+}
+
+.navbar-nav-li-active {
+  background-color: #ed7900;
+  outline: 0;
+}
+
 .navbar-nav > li > a {
+  position: relative;
+  top: 5px;
   padding-top: 10px;
   padding-bottom: 10px;
   line-height: 20px;
+  outline: 0;
 }
 @media (max-width: 767px) {
   .navbar-nav .open .dropdown-menu {

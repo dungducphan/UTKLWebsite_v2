@@ -38,18 +38,26 @@
             ======================================*/
             $(function () {
                 $.vegas('slideshow', {
+                    delay: 10000,
+                    timer: false,
+                    shuffle: true,
+                    firstTransition: 'fade',
+                    firstTransitionDuration: 5000,
+                    transition: 'slideDown2',
+                    transitionDuration: 2000,
                     backgrounds: [
-                      { src: 'assets/img/1.jpg', fade: 1000, delay: 9000 },
-                      { src: 'assets/img/2.jpg', fade: 1000, delay: 9000 },
-                      { src: 'assets/img/3.jpg', fade: 1000, delay: 9000 },
-                      { src: 'assets/img/4.jpg', fade: 1000, delay: 9000 },
-                      { src: 'assets/img/5.jpg', fade: 1000, delay: 9000 },
-                      { src: 'assets/img/6.jpg', fade: 1000, delay: 9000 },
-                      { src: 'assets/img/7.jpg', fade: 1000, delay: 9000 }
+                      { src: 'assets/img/1.jpg', fade: 1000},
+                      { src: 'assets/img/2.jpg', fade: 1000},
+                      { src: 'assets/img/3.jpg', fade: 1000},
+                      { src: 'assets/img/4.jpg', fade: 1000},
+                      { src: 'assets/img/5.jpg', fade: 1000},
+                      { src: 'assets/img/6.jpg', fade: 1000},
+                      { src: 'assets/img/7.jpg', fade: 1000},
+                      { src: 'assets/img/9.jpg', fade: 1000}
                     ]
                 })('overlay', {
                     /** SLIDESHOW OVERLAY IMAGE **/
-                    src: 'assets/plugins/vegas/overlays/05.png' // THERE ARE TOTAL 01 TO 15 .png IMAGES AT THE PATH GIVEN, WHICH YOU CAN USE HERE
+                    src: 'assets/plugins/vegas/overlays/0.png' // THERE ARE TOTAL 01 TO 15 .png IMAGES AT THE PATH GIVEN, WHICH YOU CAN USE HERE
                 });
 
             });
@@ -58,7 +66,7 @@
                 NAV SCRIPTS
             ======================================*/
             $(window).bind('scroll', function () {
-                var navHeight = $(window).height() -50;
+                var navHeight = $(window).height() - 70;
                 if ($(window).scrollTop() > navHeight) {
                     $('nav').addClass('fixed');
                 }
@@ -84,5 +92,47 @@
     $(document).ready(function () {
         mainApp.main_fun();
     });
+
+
+
+    // CHECK VIEWPORT FOR ELEMENT ID (DUNG)
+    $.fn.isOnScreen = function(test){
+
+      var height = this.outerHeight();
+      var width = this.outerWidth();
+
+      if(!width || !height){
+        return false;
+      }
+
+      var win = $(window);
+
+      var viewport = {
+        top : win.scrollTop(),
+        left : win.scrollLeft()
+      };
+      viewport.right = viewport.left + win.width();
+      viewport.bottom = viewport.top + win.height();
+
+      var bounds = this.offset();
+      bounds.right = bounds.left + width;
+      bounds.bottom = bounds.top + height;
+
+      var deltas = {
+        top : viewport.bottom - bounds.top,
+        left: viewport.right - bounds.left,
+        bottom: bounds.bottom - viewport.top,
+        right: bounds.right - viewport.left
+      };
+
+      if(typeof test == 'function') {
+        return test.call(this, deltas);
+      }
+
+      return deltas.top > 0
+        && deltas.left > 0
+        && deltas.right > 0
+        && deltas.bottom > 0;
+    };
 
 }(jQuery));

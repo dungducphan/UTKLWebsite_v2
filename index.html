@@ -39,6 +39,32 @@
     MathJax.Hub.Config({ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} });
   </script>
   <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  <!-- CHECK ELEMENT IN VIEWPORT OR NOR SCRIPT -->
+  <script>
+  var sectionIDs = ["#about", "#about-team", "#price-sec", "#services-sec", "#contact-sec"];
+  var navbarItemIDs = ["#navbar-nav-item-about", "#navbar-nav-item-about-team", "#navbar-nav-item-price-sec", "#navbar-nav-item-services-sec", "#navbar-nav-item-contact-sec"];
+  setInterval(function() {
+    for (i = 0; i < sectionIDs.length; i++) {
+      if ($(sectionIDs[i]).isOnScreen(
+        function(deltas){
+          return deltas.top >= 10 && deltas.bottom >= 10;
+        }
+      )) {
+        console.log(sectionIDs[i]);
+      }
+    }
+
+  }, 1000);
+  </script>
+
+  <!-- $(navbarItemIDs[i]).addClass("navbar-nav-li-active");
+  for (j = 0; j < sectionIDs.length; j++) {
+    if (j != i) {
+      $(navbarItemIDs[i]).removeClass("navbar-nav-li-active");
+    }
+  } -->
+
 </head>
 
 <body>
@@ -64,20 +90,21 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-        <a class="navbar-brand" href="#home"><i class="fa fa-home" style="color:#ed7900;"></i></a>
       </div>
       <!-- Collect the nav links for toggling -->
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
-          <li><a href="#about" style="font-weight:bold;">Research</a>
+          <li id="navbar-nav-item-home"><a href="#home"><i class="fa fa-home" style="position:relative;font-size:130%;bottom:5px;width:80px;text-align:left;"></i></a>
           </li>
-          <li><a href="#about-team" style="font-weight:bold;">Team</a>
+          <li id="navbar-nav-item-about"><a href="#about" style="font-weight:bold;">Research</a>
           </li>
-          <li><a href="#price-sec" style="font-weight:bold;">Publications</a>
+          <li id="navbar-nav-item-about-team"><a href="#about-team" style="font-weight:bold;">Members</a>
           </li>
-          <li><a href="#services-sec" style="font-weight:bold;">Resources</a>
+          <li id="navbar-nav-item-price-sec"><a href="#price-sec" style="font-weight:bold;">Publication</a>
           </li>
-          <li><a href="#contact-sec" style="font-weight:bold;">Contact</a>
+          <li id="navbar-nav-item-services-sec"><a href="#services-sec" style="font-weight:bold;">Resource</a>
+          </li>
+          <li id="navbar-nav-item-contact-sec"><a href="#contact-sec" style="font-weight:bold;">Contact</a>
           </li>
         </ul>
       </div>
@@ -144,7 +171,7 @@
                     <img src="assets/img/led.png" style="max-width:50%; padding-top: 25px; padding-left:25px;padding-right:35px;" align="right" />
                     <p align="justify" style="padding-left:50px; padding-right:50px;">
                       <br /> We report new constraints on the size of large extra dimensions from data collected by the MINOS experiment between 2005 and 2012. Our analysis employs a model in which sterile neutrinos arise as Kaluza-Klein states in large extra
-                      dimensions and thus modify the neutrino oscillation probabilities due to mixing between active and sterile neutrino states. Using Fermilab's NuMI beam exposure of $10.56 \times 10^{20}$ protons-on-target, we combine muon neutrino charged
+                      dimensions and thus modify the neutrino oscillation probabilities due to mixing between active and sterile neutrino states. Using Fermilab's NuMI beam exposure of $10.56 \times 10^{20}$ protons-on-target, we combine muon neutrino chargedx
                       current and neutral current data sets from the Near and Far Detectors and observe no evidence for deviations from standard three-flavor neutrino oscillations. The ratios of reconstructed energy spectra in the two detectors constrain the
                       size of large extra dimensions to be smaller than $0.45~\mu\text{m}$ at $90\%~\text{C.L.}$ in the limit of a vanishing lightest active neutrino mass. Stronger limits are obtained for non-vanishing masses.
                     </p>
@@ -163,7 +190,10 @@
 
       <div class="row text-center">
         <div class="col-md-8 col-md-offset-2 ">
+          <!--
           <h1><span style="color:white;font-family:cursive;font-weight:bold;font-size:400%;">&nu;</span><subscript><span style="color:white;font-family:geobats;font-weight:bold;font-size:15%;position:relative; top:20px;right:20px;">Ú</span></subscript></h1>
+        -->
+          <h1 style="color:white;"><img src="assets/img/research.png" width="130px"/></h1>
           <h4 style="color:white;">
           <strong>
             Our work focuses on experimental neutrino physics. <br />
@@ -240,6 +270,19 @@
             <strong>
             We are a diverse research team with people from all over the world.
             </strong>
+            <br />
+            <img src="assets/flags/flags/4x3/pl.svg" style="max-width:60px;"/>
+            <img src="assets/flags/flags/4x3/cn.svg" style="max-width:60px;"/>
+            <img src="assets/flags/flags/4x3/us.svg" style="max-width:60px;"/>
+            <img src="assets/flags/flags/4x3/mx.svg" style="max-width:60px;"/>
+            <img src="assets/flags/flags/4x3/be.svg" style="max-width:60px;"/>
+            <img src="assets/flags/flags/4x3/es.svg" style="max-width:60px;"/>
+            <img src="assets/flags/flags/4x3/vn.svg" style="max-width:60px;"/>
+            <img src="assets/flags/flags/4x3/in.svg" style="max-width:60px;"/>
+            <img src="assets/flags/flags/4x3/ve.svg" style="max-width:60px;"/>
+            <br />
+            <br />
+            <br />
           </h4>
         </div>
       </div>
@@ -249,33 +292,25 @@
           <div class="col-md-3 col-sm-3 col-xs-6">
             <div class="team-member">
               <img src="assets/img/karol.png" alt="">
-              <h3> <strong> Karol Lang </strong>
-              <br /><br />
-						  <img src="assets/flags/flags/4x3/pl.svg" style="max-width:30px;"/></h3>
+              <h3> <strong> Karol Lang </strong></h3>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-3 col-xs-6">
+            <div class="team-member">
+              <img src="assets/img/marek.jpg" alt="">
+              <h3> <strong>Marek Proga</strong></h3>
             </div>
           </div>
           <div class="col-md-3 col-sm-3 col-xs-6">
             <div class="team-member">
               <img src="assets/img/team.png" alt="">
-              <h3> <strong>Marek Proga</strong>
-              <br /><br />
-						  <img src="assets/flags/flags/4x3/pl.svg" style="max-width:30px;"/></h3>
-            </div>
-          </div>
-          <div class="col-md-3 col-sm-3 col-xs-6">
-            <div class="team-member">
-              <img src="assets/img/team.png" alt="">
-              <h3> <strong>Junting Huang</strong>
-              <br /><br />
-						  <img src="assets/flags/flags/4x3/cn.svg" style="max-width:30px;"/></h3>
+              <h3> <strong>Junting Huang</strong></h3>
             </div>
           </div>
           <div class="col-md-3 col-sm-3 col-xs-6">
             <div class="team-member">
               <img src="assets/img/adam_s.jpeg" alt="">
-              <h3> <strong>Adam Paul S.</strong>
-              <br /><br />
-						  <img src="assets/flags/flags/4x3/us.svg" style="max-width:30px;"/></h3>
+              <h3> <strong>Adam Paul S.</strong></h3>
             </div>
           </div>
         </div>
@@ -284,33 +319,25 @@
           <div class="col-md-3 col-sm-3 col-xs-6">
             <div class="team-member">
               <img src="assets/img/tom.jpg" alt="">
-              <h3> <strong>Thomas Carroll</strong>
-              <br /><br />
-						  <img src="assets/flags/flags/4x3/us.svg" style="max-width:30px;"/></h3>
+              <h3> <strong>Thomas Carroll</strong></h3>
             </div>
           </div>
           <div class="col-md-3 col-sm-3 col-xs-6">
             <div class="team-member">
               <img src="assets/img/ramon.jpg" alt="">
-              <h3> <strong>Ramon Salazar</strong>
-              <br /><br />
-						  <img src="assets/flags/flags/4x3/mx.svg" style="max-width:30px;"/></h3>
+              <h3> <strong>Ramon Salazar</strong></h3>
             </div>
           </div>
           <div class="col-md-3 col-sm-3 col-xs-6">
             <div class="team-member">
               <img src="assets/img/simon.jpg" alt="">
-              <h3> <strong>Simon de Rjick</strong>
-              <br /><br />
-						  <img src="assets/flags/flags/4x3/be.svg" style="max-width:30px;"/></h3>
+              <h3> <strong>Simon de Rjick</strong></h3>
             </div>
           </div>
           <div class="col-md-3 col-sm-3 col-xs-6">
             <div class="team-member">
               <img src="assets/img/bea.jpg" alt="">
-              <h3> <strong>Beatriz Tapia</strong>
-              <br /><br />
-						  <img src="assets/flags/flags/4x3/es.svg" style="max-width:30px;"/></h3>
+              <h3> <strong>Beatriz Tapia</strong></h3>
             </div>
           </div>
         </div>
@@ -319,25 +346,19 @@
           <div class="col-md-3 col-sm-3 col-xs-6">
             <div class="team-member">
               <img src="assets/img/dung.jpg" alt="">
-              <h3> <strong> Dung Phan </strong>
-              <br /><br />
-						  <img src="assets/flags/flags/4x3/vn.svg" style="max-width:30px;"/></h3>
+              <h3> <strong> Dung Phan </strong></h3>
             </div>
           </div>
           <div class="col-md-3 col-sm-3 col-xs-6">
             <div class="team-member">
               <img src="assets/img/shiv.jpg" alt="">
-              <h3> <strong> Shiv Yadavalli </strong>
-              <br /><br />
-						  <img src="assets/flags/flags/4x3/in.svg" style="max-width:30px;"/></h3>
+              <h3> <strong> Shiv Yadavalli </strong></h3>
             </div>
           </div>
           <div class="col-md-3 col-sm-3 col-xs-6">
             <div class="team-member">
-              <img src="assets/img/team.png" alt="">
-              <h3> <strong>Christopher Webster</strong>
-              <br /><br />
-						  <img src="assets/flags/flags/4x3/us.svg" style="max-width:30px;"/></h3>
+              <img src="assets/img/christ_webster.jpg" alt="">
+              <h3> <strong>Christopher Webster</strong></h3>
             </div>
           </div>
         </div>
@@ -357,33 +378,25 @@
           <div class="col-md-3 col-sm-3 col-xs-6">
             <div class="team-member">
               <img src="assets/img/will_flanagan.png" alt="">
-              <h3> <strong>Will Flanagan</strong>
-                      <br /><br />
-        						  <img src="assets/flags/flags/4x3/us.svg" style="max-width:30px;"/></h3>
+              <h3> <strong>Will Flanagan</strong></h3>
             </div>
           </div>
           <div class="col-md-3 col-sm-3 col-xs-6">
             <div class="team-member">
               <img src="assets/img/john_ceasar.jpg" alt="">
-              <h3> <strong>John Ceasar</strong>
-                      <br /><br />
-        						  <img src="assets/flags/flags/4x3/ve.svg" style="max-width:30px;"/></h3>
+              <h3> <strong>John Ceasar</strong></h3>
             </div>
           </div>
           <div class="col-md-3 col-sm-3 col-xs-6">
             <div class="team-member">
               <img src="assets/img/brandon_s.jpg" alt="">
-              <h3> <strong>Brandon Soubasis</strong>
-                      <br /><br />
-        						  <img src="assets/flags/flags/4x3/us.svg" style="max-width:30px;"/></h3>
+              <h3> <strong>Brandon Soubasis</strong></h3>
             </div>
           </div>
           <div class="col-md-3 col-sm-3 col-xs-6">
             <div class="team-member">
               <img src="assets/img/abhishek.jpg" alt="">
-              <h3> <strong>Abhishek Rajput</strong>
-                      <br /><br />
-        						  <img src="assets/flags/flags/4x3/in.svg" style="max-width:30px;"/></h3>
+              <h3> <strong>Abhishek Rajput</strong></h3>
             </div>
           </div>
         </div>
@@ -392,9 +405,19 @@
           <div class="col-md-3 col-sm-3 col-xs-6">
             <div class="team-member">
               <img src="assets/img/son_cao.jpg" alt="">
-              <h3> <strong>Son Cao</strong>
-                      <br /><br />
-        						  <img src="assets/flags/flags/4x3/vn.svg" style="max-width:30px;"/></h3>
+              <h3> <strong>Son Cao</strong></h3>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-3 col-xs-6">
+            <div class="team-member">
+              <img src="assets/img/kayla.jpg" alt="">
+              <h3> <strong>Kayla Leonard</strong></h3>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-3 col-xs-6">
+            <div class="team-member">
+              <img src="assets/img/adam_rouhiainen.jpg" alt="">
+              <h3> <strong>Adam Rouhiainen</strong></h3>
             </div>
           </div>
         </div>
@@ -749,7 +772,6 @@
   <script src="assets/plugins/vegas/jquery.vegas.min.js"></script>
   <!-- CUSTOM SCRIPTS -->
   <script src="assets/js/custom.js"></script>
-
 </body>
 
 </html>
