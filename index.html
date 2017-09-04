@@ -47,9 +47,6 @@
   setInterval(function() {
     for (i = 0; i < sectionIDs.length; i++) {
       if ($(sectionIDs[i]).isOnScreen(
-        function(deltas){
-          return deltas.top >= 10 && deltas.bottom >= 10;
-        }
       )) {
         console.log(sectionIDs[i]);
       }
