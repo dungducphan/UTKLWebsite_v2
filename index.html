@@ -23,7 +23,7 @@
   <!-- FONTAWESOME STYLE CSS -->
   <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
   <!-- VEGAS STYLE CSS -->
-  <link href="assets/scripts/vegas/jquery.vegas.min.css" rel="stylesheet" />
+  <link href="assets/plugins/vegas/jquery.vegas.min.css" rel="stylesheet" />
   <!-- CUSTOM STYLE CSS -->
   <link href="assets/css/style.css" rel="stylesheet" />
   <!-- GOOGLE FONT -->
@@ -45,18 +45,37 @@
   <script>
   var sectionIDs = ["#about", "#about-team", "#price-sec", "#services-sec", "#contact-sec"];
   var navbarItemIDs = ["#navbar-nav-item-about", "#navbar-nav-item-about-team", "#navbar-nav-item-price-sec", "#navbar-nav-item-services-sec", "#navbar-nav-item-contact-sec"];
+  var list = [];
+  var previousHighlightedID = -1;
+  var currentHighlightedID = -1;
   setInterval(function() {
     for (i = 0; i < sectionIDs.length; i++) {
       if ($(sectionIDs[i]).isOnScreen(
         function(deltas){
-          return deltas.top >= 500;
+          return deltas.top >= 400 && deltas.bottom >= 400;
         }
       )) {
-        console.log(sectionIDs[i]);
+        list.push(i);
       }
     }
+    if (list.length == 1) {
+      currentHighlightedID = list[0];
+    } else if (list.length == 2) {
+      currentHighlightedID = list[0];
+    } else {
+      currentHighlightedID = list[1];
+    }
 
-  }, 1000);
+    for (i = 0; i < sectionIDs.length; i++) {
+      list.shift();
+    }
+
+    if (currentHighlightedID != previousHighlightedID) {
+      $(navbarItemIDs[currentHighlightedID]).addClass("navbar-nav-li-active", 100, "swing");
+      $(navbarItemIDs[previousHighlightedID]).removeClass("navbar-nav-li-active", 100, "swing");
+      previousHighlightedID = currentHighlightedID;
+    }
+  }, 100);
   </script>
 
   <!-- $(navbarItemIDs[i]).addClass("navbar-nav-li-active");
@@ -130,12 +149,19 @@
       </div>
 
       <div id="selected-work-carousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators RIGHT -->
+        <div style="height:800px;width:150px;position:absolute;right:-150px;" href="#selected-work-carousel" data-slide="next">
+          <i class="fa fa-chevron-right fa-5x" style="color:white;position:relative;top:45%;left:67%;"></i>
+        </div>
+        <!-- Indicators LEFT -->
+        <div style="height:800px;width:150px;position:absolute;left:-150px;" href="#selected-work-carousel" data-slide="prev">
+          <i class="fa fa-chevron-left fa-5x" style="color:white;position:relative;top:45%;"></i>
+        </div>
         <!-- Indicators -->
         <ol class="carousel-indicators">
           <li data-target="#selected-work-carousel" data-slide-to="0" class="active"></li>
           <li data-target="#selected-work-carousel" data-slide-to="1"></li>
         </ol>
-
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
           <div class="item active">
@@ -189,6 +215,7 @@
         </div>
       </div>
 
+
       <div class="row text-center">
         <div class="col-md-8 col-md-offset-2 ">
           <!--
@@ -208,10 +235,10 @@
         <div class="col-md-12">
           <div class="col-md-6">
             <div class="service-div" style="height:400px">
-              <div style="max-width:300px;margin: 0 auto;">
-                <img src="assets/img/minos.png" style="max-width:70px;" align="left"/>
-                <img src="assets/img/nova.png" style="max-width:70px;" align="center"/>
-                <img src="assets/img/DUNE.png" style="max-width:70px;position:relative;top:10px;" align="right"/>
+              <div style="max-width:350px;margin: 0 auto;">
+                <img src="assets/img/minos.png" style="max-height:100px;" align="left"/>
+                <img src="assets/img/nova.png" style="max-height:100px;" align="center"/>
+                <img src="assets/img/DUNE.png" style="max-height:100px;position:relative;top:10px;" align="right"/>
               </div>
               <h3> Neutrino Oscillations </h3>
               <p align="justify">
@@ -222,7 +249,7 @@
 
           <div class="col-md-6">
             <div class="service-div" style="height:400px">
-              <img src="assets/img/supernemo.png" style="max-width:70px;"/>
+              <img src="assets/img/supernemo.png" style="max-height:100px;"/>
               <h3> Neutrinoless Double Beta Decay </h3>
               <p align="justify">
                 We also in NEMO3 and future SuperNEMO. Our students builded the source deployment system here in UT.
@@ -236,7 +263,7 @@
         <div class="col-md-12">
           <div class="col-md-6">
             <div class="service-div" style="height:400px">
-              <i class="fa fa-first-order fa-5x"></i>
+              <img src="assets/img/miner.png" style="max-height:100px;"/>
               <h3> Neutrino Coherent Scattering </h3>
               <p align="justify">
                 We are new to this field. Much to learn. This type of experiment is extremely difficult. No one, in the last 40 years has been successful. But hopefully, we will create a "wow" in physics community.
@@ -246,7 +273,7 @@
 
           <div class="col-md-6">
             <div class="service-div" style="height:400px">
-              <i class="fa fa-microchip fa-5x"></i>
+              <i class="fa fa-microchip fa-rotate-90 fa-5x" style="max-height:200px;"></i>
               <h3> Detector R&amp;D </h3>
               <p align="justify">
                 Finally, we do detector R&amp;D too. Simulation, hardware design, electronics, we do all of them. Especially, we don't want to be left behind in the advent of LAr technology. We are working on it too.

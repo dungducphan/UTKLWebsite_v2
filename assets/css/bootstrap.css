@@ -3803,7 +3803,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-nav-li-active {
-  background-color: #ed7900;
+  background-color: #ed7900!important;
   outline: 0;
 }
 
