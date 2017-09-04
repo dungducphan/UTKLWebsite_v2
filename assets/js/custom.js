@@ -95,7 +95,8 @@
 
 
 
-    // CHECK VIEWPORT FOR ELEMENT ID (DUNG)
+    // CHECK VIEWPORT FOR ELEMENT ID (https://github.com/moagrius/isOnScreen)
+    // Dungy added here
     $.fn.isOnScreen = function(test){
 
       var height = this.outerHeight();
