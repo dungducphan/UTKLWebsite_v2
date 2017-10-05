@@ -53,8 +53,8 @@
   <!-- CHECK ELEMENT IN VIEWPORT OR NOR SCRIPT -->
   <!--- Dungy's script (bug: previous button's state is not changed when scroll down) -->
   <script>
-  var sectionIDs = ["#stdosc", "#led", "#sterile", "#appearance"];
-  var navbarItemIDs = ["#navbar-nav-item-stdosc", "#navbar-nav-item-led", "#navbar-nav-item-sterile", "#navbar-nav-item-appearance"];
+  var sectionIDs = ["#stdosc", "#led", "#sterile", "#novaopsim"];
+  var navbarItemIDs = ["#navbar-nav-item-stdosc", "#navbar-nav-item-led", "#navbar-nav-item-sterile", "#navbar-nav-item-novaopsim"];
   var list = [];
   var previousHighlightedID = -1;
   var currentHighlightedID = -1;
@@ -106,15 +106,15 @@
       <!-- Collect the nav links for toggling -->
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
-          <li id="navbar-nav-item-home"><a href="index.html"><i class="fa fa-home" style="position:relative;font-size:130%;bottom:5px;width:80px;text-align:left;"></i></a>
+          <li id="navbar-nav-item-home"><a href="index.html#research-directions"><i class="fa fa-home" style="position:relative;font-size:130%;bottom:5px;width:80px;text-align:left;"></i></a>
           </li>
-          <li id="navbar-nav-item-stdosc"><a href="#stdosc" style="font-weight:bold;">Disappearance</a>
+          <li id="navbar-nav-item-stdosc"><a href="#stdosc" style="font-weight:bold;">3-Flavor</a>
           </li>
-          <li id="navbar-nav-item-led"><a href="#led" style="font-weight:bold;">LED Search</a>
+          <li id="navbar-nav-item-led"><a href="#led" style="font-weight:bold;">LED</a>
           </li>
-          <li id="navbar-nav-item-sterile"><a href="#sterile" style="font-weight:bold;">Sterile Search</a>
+          <li id="navbar-nav-item-sterile"><a href="#sterile" style="font-weight:bold;">Sterile \(\nu\)</a>
           </li>
-          <li id="navbar-nav-item-appearance"><a href="#appearance" style="font-weight:bold;">Appearance</a>
+          <li id="navbar-nav-item-novaopsim"><a href="#novaopsim" style="font-weight:bold;">NOvA Sim</a>
           </li>
         </ul>
       </div>
@@ -124,23 +124,138 @@
   </nav>
   <!--End Navigation -->
 
-  <!-- Contact Section -->
-  <section class="for-full-back color-dark " id="minos_intro">
+
+  <!-- NuOsc Intro Section -->
+  <section class="for-full-back color-dark">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h1 style="font-weight:bold; color:white;">Neutrino Oscillation</h1>
+          </br>
+          </br>
+          </br>
+          <h4>
+            <p align="justify" style="padding-left:50px; padding-right:50px; color:white;">Neutrino oscillation is a quantum mechanical phenomenon whereby a neutrino created with a specific lepton flavor (electron, muon, or tau) can later be measured to have a different flavor. The probability of measuring a particular flavor for a neutrino varies periodically as it propagates through space.</p>
+            <p align="justify" style="padding-left:50px; padding-right:50px; color:white;">High Energy Physis Research Team at UT has involved in several neutrino oscillation experiments namely MINOS/MINOS+ and NOvA. We are currently looking forward to DUNE.</p>
+            <p align="justify" style="padding-left:50px; padding-right:50px; color:white;">Don't you want to know more about this cool phenomena? Flip through the interesting fact cards below for more information.</p>
+          </h4>
+
+          <div id="selected-work-carousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators RIGHT -->
+            <div style="height:600px;width:300px;position:absolute;right:-110px;" href="#selected-work-carousel" data-slide="next">
+            </div>
+            <!-- Indicators LEFT -->
+            <div style="height:600px;width:300px;position:absolute;left:-110px;" href="#selected-work-carousel" data-slide="prev">
+            </div>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+              <div class="item active">
+                <div class="row text-center g-pad-bottom">
+                  <div class="col-md-10 col-md-offset-1">
+                    <div class="col-md-10 col-md-offset-1">
+                      <div class="service-div color-white g-pad-bottom" style="height:600px;">
+                        <h2 style="font-weight:bold;">DUNE</h2>
+                        <p>77,000 tons of liquefied argon</p>
+                        <h4 align="justify" style="padding-left:50px; padding-right:50px;">
+                          Fermilab will provide the beam for the Deep Underground Neutrino Experiment. This experiment will use detectors on site and in a gold mine in Lead, South Dakota to search for differences between neutrinos and antineutrinos that may develop on their 800-mile trip.
+                          </br>
+                          </br>
+                          DID YOU KNOW?
+                          <ol>
+                            <li>The DUNE experiment draws 1,000 scientists from around the world to Fermilab making it the largest neutrino collaboration ever.</li>
+                            <li>The Homestake gold mine was the home of Ray Davis’s Nobel prize-winning experiment which saw neutrinos produced by the Sun.</li>
+                          </ol>
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- New item -->
+              <div class="item">
+                <div class="row text-center g-pad-bottom">
+                  <div class="col-md-10 col-md-offset-1">
+                    <div class="col-md-10 col-md-offset-1">
+                      <div class="service-div color-white g-pad-bottom" style="height:600px;">
+                        <h2 style="font-weight:bold;">MINOS</h2>
+                        <p>6,000 tons of scintillator and steel</p>
+                        <h4 align="justify" style="padding-left:50px; padding-right:50px;">
+                          The MINOS experiment was the first long baseline experiment at Fermilab linking the neutrino beam at Fermilab to a detector located 450 miles away in Minnesota. MINOS’s measurements of neutrino oscillations and their speed of travel continue to be among most precise ever made.
+                          </br>
+                          </br>
+                          DID YOU KNOW?
+                          <ol>
+                            <li>The neutrino beam built for MINOS is the most powerful neutrino beam ever built.</li>
+                            <li>Construction of the MINOS detector assembled 12 million pounds of steel 2,300 feet underground in the Soudan iron mine.</li>
+                          </ol>
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- New item -->
+              <div class="item">
+                <div class="row text-center g-pad-bottom">
+                  <div class="col-md-10 col-md-offset-1">
+                    <div class="col-md-10 col-md-offset-1">
+                      <div class="service-div color-white g-pad-bottom" style="height:600px;">
+                        <h2 style="font-weight:bold;">NOvA</h2>
+                        <p>15,000 tons of PVC plastic and liquid scintillator</p>
+                        <h4 align="justify" style="padding-left:50px; padding-right:50px;">
+                          The NOvA experiment uses two detectors at Fermilab and Ash River, MN separated by the largest distance of any neutrino experiment in operation. This large distance gives NOvA a unique opportunity to answer many of the remaining questions in neutrino physics.
+                          </br>
+                          </br>
+                          DID YOU KNOW?
+                          <ol>
+                            <li>The NOvA detector is the size of an office building and is the largest free-standing plastic structure ever built.</li>
+                            <li>Construction of the NOvA experiment employed over 250 undergraduate students at the University of Minnesota, Twin Cities.</li>
+                          </ol>
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--End NuOsc Introduction Section -->
+
+  <!-- MINOS Intro Section -->
+  <section class="for-full-back color-white">
     <div class="container">
       <div class="row text-center">
         <div class="col-md-12">
           <h1><img src="assets/img/minos.png" style="max-height:300px;"/></h1>
           <h4>
-            <p align="justify" style="padding-left:50px; padding-right:50px; color:white;"><span style="font-weight:bold;">MINOS</span> or <span style="font-weight:bold;">M</span>ain <span style="font-weight:bold;">I</span>njector <span style="font-weight:bold;">N</span>eutrino <span style="font-weight:bold;">O</span>scillation <span style="font-weight:bold;">S</span>earch was a particle physics experiment designed to study the phenomena of neutrino oscillations. The MINOS experiment started detecting neutrinos from the NuMI beam in February 2005. On 30 March 2006, the MINOS collaboration announced that the analysis of the initial data, collected in 2005, is consistent with neutrino oscillations hypothesis. MINOS received the last neutrinos from the NUMI beam line at midnight on 30 April 2012. It was upgraded to MINOS+ which started taking data in 2013. The experiment was shut down on June 29, 2016, and the far detector has been dismantled and removed.</p>
-            <p align="justify" style="padding-left:50px; padding-right:50px; color:white;">The UT Austin team has been always played an important role in producing scientific results for MINOS/MINOS+ experiment. This page will highlight notable recent studies by the collaboration. The list includes the standard oscillation study with MINOS/MINOS+ combined data, the search for sterile neutrino and large extra dimensions.</p>
+            <p align="justify" style="padding-left:50px; padding-right:50px;"><span style="font-weight:bold;">MINOS</span> or <span style="font-weight:bold;">M</span>ain <span style="font-weight:bold;">I</span>njector <span style="font-weight:bold;">N</span>eutrino <span style="font-weight:bold;">O</span>scillation <span style="font-weight:bold;">S</span>earch was a particle physics experiment designed to study the phenomena of neutrino oscillations. The MINOS experiment started detecting neutrinos from the NuMI beam in February 2005. On 30 March 2006, the MINOS collaboration announced that the analysis of the initial data, collected in 2005, is consistent with neutrino oscillations hypothesis. MINOS received the last neutrinos from the NUMI beam line at midnight on 30 April 2012. It was upgraded to MINOS+ which started taking data in 2013. The experiment was shut down on June 29, 2016, and the far detector has been dismantled and removed.</p>
+            <p align="justify" style="padding-left:50px; padding-right:50px;">The UT Austin team has been always played an important role in producing scientific results for MINOS/MINOS+ experiment. This page will highlight notable recent studies by the collaboration. The list includes the standard oscillation study with MINOS/MINOS+ combined data, the search for sterile neutrino and large extra dimensions.</p>
           </h4>
         </div>
       </div>
     </div>
   </section>
-  <!--End Introduction Section -->
+  <!--End MINOS Introduction Section -->
 
-  <!-- Contact Section -->
+  <!-- Standard Osc Intro Section -->
+  <section class="for-full-back color-dark" id="stdosc">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h1 style="font-weight:bold; color:white;">Standard Oscillation</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--End Standard Osc Introduction Section -->
+
+  <!-- MINOS LED Section -->
   <section class="for-full-back color-white " id="led">
     <div class="container">
       <div class="row text-center">
@@ -205,10 +320,69 @@
       </div>
     </div>
   </section>
+  <!-- End MINOS LED Section -->
 
+  <!-- NOVA Intro Section -->
+  <section class="color-dark">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h1><img src="assets/img/nova_wide.png" style="max-height:170px;"/></h1>
+          <h4>
+            <p align="justify" style="padding-left:50px; padding-right:50px; color:white;">NOvA (NuMI Off-Axis \(\nu_e\) Appearance) is a particle physics experiment designed to detect neutrinos in Fermilab's NuMI (Neutrinos at the Main Injector) beam. Intended to be the successor to MINOS, NOνA will consist of two detectors, one at Fermilab (the near detector), and one in northern Minnesota (the far detector). Neutrinos from NuMI will pass through 810 km of Earth to reach the far detector. NOνA's main goal is to observe the oscillation of muon neutrinos to electron neutrinos. By observing how many neutrinos change from one type to the other, NOvA hopes to accomplish three things: measurement of the mixing angle \(\theta_{13}\), measurement of the CP-violating phase \(\delta_{13}\), and determination of the neutrino mass hierarchy.</p>
+            <p align="justify" style="padding-left:50px; padding-right:50px; color:white;">Out postdoc Junting Huang is working on the optical simulation of the NOvA detectors. Throught this study, we look forward to improve the simulation, allowing more realistic prediction.</p>
+          </h4>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--End NOVA Introduction Section -->
 
+  <!-- NOVA Sim Section -->
+  <section class="for-full-back color-white " id="novaopsim">
+    <div class="container">
+      <div class="row text-center">
 
-  <!--End Contact Section -->
+        <div class="col-md-12">
+          <h1 style="font-weight:bold;">NOvA Optical Simulation</h1>
+        </div>
+        </br>
+        </br>
+        </br>
+
+        <div class="col-md-12">
+          <h4 align="justify" style="padding-left:50px; padding-right:50px; ">
+            NOvA (NuMI Off-Axis νe Appearance) is a long baseline neutrino oscillation experiment at Fermilab that studies the lepton CP violation and the neutrino mass hierarchy by observing νe and νe appearances. It also provides precision measurement of \(\Delta m_{32}^2\) and \(\theta_{23}\) through the disappearance of \(\nu_\mu\).
+          </h4>
+        </div>
+
+        <img id="led_fig_3" src="assets/img/researchPlots/nova_opsim/GEDC0208_copy.JPG" style="max-height:800px;"/>
+
+        <div class="col-md-8 col-md-offset-2">
+          </br>
+          </br>
+          <p align="justify" style="padding-left:50px; padding-right:50px; ">Figure 1: A dark box was constructed as a housing for the setup. A plane of 7 1.1 m nova cells was placed in the bottom container. Liquid scintillator was filled to make sure the cells were fully immersed.</p>
+        </div>
+
+        <img id="led_fig_3" src="assets/img/researchPlots/nova_opsim/compositeOutput.png" style="max-height:600px;"/>
+
+        <div class="col-md-8 col-md-offset-2">
+          </br>
+          </br>
+          <p align="justify" style="padding-left:50px; padding-right:50px; ">Figure 2: Number of photoelectrons dependancies on various hardware configuraions from simulation. (a) Position of the fiber. 0 and maximum of the x-axis correspond to the cell center and PVC wall, respectively. (b) Scaling factor applied to the nominal PVC reflectivity. (c) Scintillator light yield. (d) Scaling factor applied to the nominal absorption length (e) Fiber radius. (f) Fiber length.</p>
+        </div>
+
+        <div class="col-md-12">
+          <h4 align="justify" style="padding-left:50px; padding-right:50px; ">
+            Employing GEANT4, we simulated a bentchtopsetup that measures the NOvA cell light yield using both photomultiplier tube and avalanche photodiode. The measured result are used to constrain the simulation where details on the photon generation andpropagation inside the NOvA cell are extracted.
+          </h4>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- End NOVA SIM Section -->
+
   <!--footer Section -->
   <div class="for-full-back" id="footer" style="padding-bottom:10px;">
     <p align="center"><a href="https://www.utexas.edu"><img src="assets/img/ut_logo.png" width="20%" style="margin-bottom:-20px;"></a></p>
