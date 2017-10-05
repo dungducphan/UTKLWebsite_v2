@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+  <title>UTKL Research Group</title>
+  <!--REQUIRED STYLE SHEETS-->
+  <!-- BOOTSTRAP CORE STYLE CSS -->
+  <link href="assets/flags/css/flag-icon.css" rel="stylesheet" />
+  <!-- BOOTSTRAP CORE STYLE CSS -->
+  <link href="assets/css/nuosc_bootstrap.css" rel="stylesheet" />
+  <!-- FONTAWESOME STYLE CSS -->
+  <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
+  <!-- VEGAS STYLE CSS -->
+  <link href="assets/plugins/vegas/jquery.vegas.min.css" rel="stylesheet" />
+  <!-- CUSTOM STYLE CSS -->
+  <link href="assets/css/nuosc_style.css" rel="stylesheet" />
+  <!-- GOOGLE FONT -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <style>
+      #drop-cap::first-letter {
+        float: left;
+        font-size: 85px;
+        line-height: 1;
+        font-family: "Times New Roman", Times, serif;
+        font-weight: bold;
+        margin-right: 9px;
+      }
+    </style>
+
+  <!-- Adding MathJax to show mathematical formula -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]} });
+  </script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+  <!-- CHECK ELEMENT IN VIEWPORT OR NOR SCRIPT -->
+  <!--- Dungy's script (bug: previous button's state is not changed when scroll down) -->
+  <script>
+  var sectionIDs = ["#stdosc", "#led", "#sterile", "#appearance"];
+  var navbarItemIDs = ["#navbar-nav-item-stdosc", "#navbar-nav-item-led", "#navbar-nav-item-sterile", "#navbar-nav-item-appearance"];
+  var list = [];
+  var previousHighlightedID = -1;
+  var currentHighlightedID = -1;
+  setInterval(function() {
+    for (i = 0; i < sectionIDs.length; i++) {
+      if ($(sectionIDs[i]).isOnScreen(
+        function(deltas){
+          return deltas.top >= 400 && deltas.bottom >= 400;
+        }
+      )) {
+        list.push(i);
+      }
+    }
+    if (list.length == 1) {
+      currentHighlightedID = list[0];
+    } else if (list.length == 2) {
+      currentHighlightedID = list[0];
+    } else {
+      currentHighlightedID = list[1];
+    }
+
+    for (i = 0; i < sectionIDs.length; i++) {
+      list.shift();
+    }
+
+    if (currentHighlightedID != previousHighlightedID) {
+      $(navbarItemIDs[currentHighlightedID]).addClass("navbar-nav-li-active", 100, "swing");
+      $(navbarItemIDs[previousHighlightedID]).removeClass("navbar-nav-li-active", 100, "swing");
+      previousHighlightedID = currentHighlightedID;
+    }
+  }, 100);
+  </script>
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar-inverse" role="navigation" style="position:fixed;">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+      </div>
+      <!-- Collect the nav links for toggling -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+          <li id="navbar-nav-item-home"><a href="index.html"><i class="fa fa-home" style="position:relative;font-size:130%;bottom:5px;width:80px;text-align:left;"></i></a>
+          </li>
+          <li id="navbar-nav-item-stdosc"><a href="#stdosc" style="font-weight:bold;">Disappearance</a>
+          </li>
+          <li id="navbar-nav-item-led"><a href="#led" style="font-weight:bold;">LED Search</a>
+          </li>
+          <li id="navbar-nav-item-sterile"><a href="#sterile" style="font-weight:bold;">Sterile Search</a>
+          </li>
+          <li id="navbar-nav-item-appearance"><a href="#appearance" style="font-weight:bold;">Appearance</a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+  <!--End Navigation -->
+
+  <!-- Contact Section -->
+  <section class="for-full-back color-dark " id="minos_intro">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h1><img src="assets/img/minos.png" style="max-height:300px;"/></h1>
+          <h4>
+            <p align="justify" style="padding-left:50px; padding-right:50px; color:white;"><span style="font-weight:bold;">MINOS</span> or <span style="font-weight:bold;">M</span>ain <span style="font-weight:bold;">I</span>njector <span style="font-weight:bold;">N</span>eutrino <span style="font-weight:bold;">O</span>scillation <span style="font-weight:bold;">S</span>earch was a particle physics experiment designed to study the phenomena of neutrino oscillations. The MINOS experiment started detecting neutrinos from the NuMI beam in February 2005. On 30 March 2006, the MINOS collaboration announced that the analysis of the initial data, collected in 2005, is consistent with neutrino oscillations hypothesis. MINOS received the last neutrinos from the NUMI beam line at midnight on 30 April 2012. It was upgraded to MINOS+ which started taking data in 2013. The experiment was shut down on June 29, 2016, and the far detector has been dismantled and removed.</p>
+            <p align="justify" style="padding-left:50px; padding-right:50px; color:white;">The UT Austin team has been always played an important role in producing scientific results for MINOS/MINOS+ experiment. This page will highlight notable recent studies by the collaboration. The list includes the standard oscillation study with MINOS/MINOS+ combined data, the search for sterile neutrino and large extra dimensions.</p>
+          </h4>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--End Introduction Section -->
+
+  <!-- Contact Section -->
+  <section class="for-full-back color-white " id="led">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h1 style="font-weight:bold;">Large Extra Dimension Search</h1>
+          </br>
+          </br>
+          <div class="col-md-12">
+            <h4 align="justify" style="padding-left:50px; padding-right:50px; ">
+              Current data are well described by the three-flavor model, as discussed in more detail in <a href="#sterile">Sterile Neutrinos</a>. However, with increasing precision of experiments, one can test for discrepancies that could be accounted for by small modifications to the standard three-flavor model. One such scenario employs large extra dimensions, which in the context of neutrino oscillations also includes sterile neutrinos, but an infinite amount of them.
+            </h4>
+          </div>
+
+          <img id="led_fig_1" src="assets/img/researchPlots/minos_led/LED_BulkAndBrane.png" style="max-height:200px;"/>
+          <img src="assets/img/researchPlots/minos_led/LEDmasses.gif" style="max-height:500px;"/>
+
+          <div class="col-md-8 col-md-offset-2">
+            <p align="justify"> Figure 1: (Left) Simplified picture of the circular extra dimension in the LED model. (Right) The Kaluza-Klein towers of active and sterile neutrinos for the LED scenario corresponding to an extra dimension radius \(R=0.60~\mu\)m and a smallest active neutrino mass $m_0 =  0.010\,$eV.</p>
+          </div>
+
+          <div class="col-md-12">
+            <h4 align="justify" style="padding-left:50px; padding-right:50px; ">
+              In the Large Extra Dimension (LED) model of [<a href="#led_ref_5">5</a>, <a  href="#led_ref_6">6</a>, <a "#led_ref_7">7</a>, <a "#led_ref_8">8</a>, <a "#led_ref_9">9</a>] three SM singlet fermion fields are introduced in an extra dimension with radius $R$. The extra dimension together with the 3+1 spacetime, or brane, forms the bulk. A simplified picture of the circular extra dimension is given in <a href="#led_fig_1">Fig. 1</a>. The compactness of the extra dimension allows a decomposition of each bulk fermion in Fourier modes, which are interpreted in the brane as Kaluza-Klein (KK) states or infinite towers of neutrinos. The zero modes are identified as the active neutrinos, while the other modes are sterile neutrinos. The Yukawa coupling between the bulk fermions and the active neutrinos leads to mixing between the active and sterile neutrinos, which alters the three-flavor oscillation probabilities, as illustrated in <a href="#led_fig_2">Fig. 2</a>. for muon neutrino disappearance along the MINOS FD baseline. Hence, neutrino oscillation measurements can constrain the size of large extra dimensions. Compared to the three-flavor paradigm, this model requires two extra parameters, \(R\) and \(m_0\), where the latter is defined as the lightest active neutrino mass. For normal mass ordering this implies that \(m_3 > m_2 > m_1 \equiv m_0\), while for inverted mass ordering \(m_2 > m_1 > m_3 \equiv m_0\).
+            </h4>
+          </div>
+
+          <img id="led_fig_2" src="assets/img/researchPlots/minos_led/LEDnumudisLong.gif" style="max-height:600px;"/>
+
+          <div class="col-md-8 col-md-offset-2">
+            <p align="justify"> Figure 2: The muon neutrino disappearance probability along the MINOS FD baseline (with and without detector resolution effects) for the LED scenario corresponding to an extra dimension radius \(R=0.60~\mu\)m and a smallest active neutrino mass \(m_0 =  0.010~\)eV.</p>
+          </div>
+
+          <div class="col-md-12">
+            <h4 align="justify" style="padding-left:50px; padding-right:50px; ">
+              MINOS recently reported the strongest constraint on R from a neutrino oscillation experiment, excluding \(R > 0.45~\mu\)m at 90\(\%\) C.L., as shown in <a href="#led_fig_3">Fig. 3</a>. For \(m_0 < 0.1~\)eV, LED mixing effects greater than about 6\(\%\) are excluded. Ongoing work includes the development of a new analysis framework that exploits the full power of both MINOS detectors and the analysis of MINOS+ beam data which significantly increases the number of events at higher neutrino energies, away from the three-flavor minimum where the model effects are bigger.
+            </h4>
+          </div>
+
+          <img id="led_fig_3" src="assets/img/researchPlots/minos_led/Sin2ThEffSurfaceWithMINOS_linx.png" style="max-height:600px;"/>
+
+          <div class="col-md-8 col-md-offset-2">
+            <p align="justify"> Figure 3: The 90\(\%\) C.L. data contour for the LED model, obtained using the Feldman-Cousins technique, based on \(10.56\times10^{20}\) POT MINOS data and assuming normal mass ordering.</p>
+          </div>
+
+          <div class="col-md-8 col-md-offset-2">
+            <h4>References</h4>
+            <p align="justify" style="padding-left:50px; padding-right:50px; ">
+              <ol align="justify" style="padding-left:50px; padding-right:50px; ">
+                <li id="led_ref_1"> N. Arkani-Hamed, S. Dimopoulos, and G. R. Dvali, Phys. Lett. B. 429, 263 (1998). </br>I. Antoniadis, N. Arkani-Hamed, S. Dimopoulos, and G. R. Divali, Phys. Lett. B. 436, 257 (1998).</br> N.  Arkani-Hamed, S. Dimopoulos, and G. R. Dvali, Phys. Rev. D. 59, 086004 (1999).</li>
+                <li id="led_ref_2">P. Minkowski, Phys. Lett. B. 67, 421 (1977).</br> M. Gell-Mann, P. Ramond, and R. Slansky, in Supergravity, p.315, edited by F. Nieuwenhuizen and D. Freedman, North Holland, Amsterdam, 1979.</br> T. Yanagida, Proceedings of the Workshop on Unified Theory and Baryon Number in the Universe, edited by O. Sawada and A. Sugamoto, KEK, Tsukuba, Japan, 1979.</br> R. N. Mohapatra and G. Senjanovic, Phys. Rev. Lett. 44, 912 (1980).</li>
+                <li id="led_ref_3">K. R. Dienes, E. Dudas, and T. Gherghetta, Nucl. Phys. B. 557, 25 (1999).</li>
+                <li id="led_ref_4">N. Arkani-Hamed, S. Dimopoulos, G. R. Dvali, and J. March-Russell, Phys. Rev. D. 65, 024032 (2001).</li>
+                <li id="led_ref_5">G. R. Dvali and A. Y. Smirnov, Nucl. Phys. B. 563, 63 (1999).</li>
+                <li id="led_ref_6">R. Barbieri, P. Creminelli, and A. Strumia, Nucl. Phys. B. 585, 28 (2000).</li>
+                <li id="led_ref_7">R. N. Mohapatra, S. Nandi, and A. Perez-Lorenzana, Phys. Lett. B. 466, 115 (1999).</br> R. N. Mohapatra and A. Perez-Lorenzana, Nucl. Phys. B. 576, 466 (2000). </br> R. N. Mohapatra and A. Perez-Lorenzana, Nucl. Phys. B. 593, 451 (2001).</li>
+                <li id="led_ref_8">H. Davoudiasl, P. Langacker, and M. Perelstein, Phys. Rev. D. 65, 105015 (2002).</li>
+                <li id="led_ref_9">P. A. N. Machado, H. Nunokawa, and R. Zukanovich Funchal, Phys. Rev. D. 84, 013003 (2011).</li>
+              </ol>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!--End Contact Section -->
+  <!--footer Section -->
+  <div class="for-full-back" id="footer" style="padding-bottom:10px;">
+    <p align="center"><a href="https://www.utexas.edu"><img src="assets/img/ut_logo.png" width="20%" style="margin-bottom:-20px;"></a></p>
+    <p style="color:#ed7900;font-size:120%;margin-bottom:-20px;" align="center">Copyright &copy; 2017 UTKL Research Group.</p>
+    <p style="color:#ffffff;font-size:80%;margin-bottom:-10px;" align="center">
+      This website is developed using <a href="http://getbootstrap.com/">bootstrap</a>, <a href="https://github.com/lipis/flag-icon-css">flag-icon-css</a>, <a href="http://fontawesome.io/">font-awesome</a> and <a href="http://www.dafont.com/geobats.font">geobats</a>.
+    </p>
+  </div>
+
+  <!--End footer Section -->
+  <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+  <!-- CORE JQUERY  -->
+  <script src="assets/plugins/jquery-1.10.2.js"></script>
+  <!-- BOOTSTRAP CORE SCRIPT   -->
+  <script src="assets/plugins/bootstrap.js"></script>
+  <!-- CUSTOM SCRIPTS -->
+  <script src="assets/js/custom.js"></script>
+</body>
+
+</html>
