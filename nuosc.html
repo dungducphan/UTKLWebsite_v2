@@ -53,8 +53,8 @@
   <!-- CHECK ELEMENT IN VIEWPORT OR NOR SCRIPT -->
   <!--- Dungy's script (bug: previous button's state is not changed when scroll down) -->
   <script>
-  var sectionIDs = ["#stdosc", "#led", "#sterile", "#novaopsim"];
-  var navbarItemIDs = ["#navbar-nav-item-stdosc", "#navbar-nav-item-led", "#navbar-nav-item-sterile", "#navbar-nav-item-novaopsim"];
+  var sectionIDs = ["#stdosc", "#led", "#sterile", "#novaopsim", "#dune"];
+  var navbarItemIDs = ["#navbar-nav-item-stdosc", "#navbar-nav-item-led", "#navbar-nav-item-sterile", "#navbar-nav-item-novaopsim", "#navbar-nav-item-dune"];
   var list = [];
   var previousHighlightedID = -1;
   var currentHighlightedID = -1;
@@ -115,6 +115,8 @@
           <li id="navbar-nav-item-sterile"><a href="#sterile" style="font-weight:bold;">Sterile \(\nu\)</a>
           </li>
           <li id="navbar-nav-item-novaopsim"><a href="#novaopsim" style="font-weight:bold;">NOvA Sim</a>
+          </li>
+          <li id="navbar-nav-item-dune"><a href="#dune" style="font-weight:bold;">DUNE</a>
           </li>
         </ul>
       </div>
@@ -330,7 +332,7 @@
           <h1><img src="assets/img/nova_wide.png" style="max-height:170px;"/></h1>
           <h4>
             <p align="justify" style="padding-left:50px; padding-right:50px; color:white;">NOvA (NuMI Off-Axis \(\nu_e\) Appearance) is a particle physics experiment designed to detect neutrinos in Fermilab's NuMI (Neutrinos at the Main Injector) beam. Intended to be the successor to MINOS, NOνA will consist of two detectors, one at Fermilab (the near detector), and one in northern Minnesota (the far detector). Neutrinos from NuMI will pass through 810 km of Earth to reach the far detector. NOνA's main goal is to observe the oscillation of muon neutrinos to electron neutrinos. By observing how many neutrinos change from one type to the other, NOvA hopes to accomplish three things: measurement of the mixing angle \(\theta_{13}\), measurement of the CP-violating phase \(\delta_{13}\), and determination of the neutrino mass hierarchy.</p>
-            <p align="justify" style="padding-left:50px; padding-right:50px; color:white;">Out postdoc Junting Huang is working on the optical simulation of the NOvA detectors. Throught this study, we look forward to improve the simulation, allowing more realistic prediction.</p>
+            <p align="justify" style="padding-left:50px; padding-right:50px; color:white;">Our postdoc Junting Huang is working on the optical simulation of the NOvA detectors. Throught this study, we look forward to improve the simulation, allowing more realistic prediction.</p>
           </h4>
         </div>
       </div>
@@ -356,7 +358,7 @@
           </h4>
         </div>
 
-        <img id="led_fig_3" src="assets/img/researchPlots/nova_opsim/GEDC0208_copy.JPG" style="max-height:800px;"/>
+        <img id="novaopsim_fig_1" src="assets/img/researchPlots/nova_opsim/GEDC0208_copy.JPG" style="max-height:800px;"/>
 
         <div class="col-md-8 col-md-offset-2">
           </br>
@@ -364,7 +366,7 @@
           <p align="justify" style="padding-left:50px; padding-right:50px; ">Figure 1: A dark box was constructed as a housing for the setup. A plane of 7 1.1 m nova cells was placed in the bottom container. Liquid scintillator was filled to make sure the cells were fully immersed.</p>
         </div>
 
-        <img id="led_fig_3" src="assets/img/researchPlots/nova_opsim/compositeOutput.png" style="max-height:600px;"/>
+        <img id="novaopsim_fig_2" src="assets/img/researchPlots/nova_opsim/compositeOutput.png" style="max-height:600px;"/>
 
         <div class="col-md-8 col-md-offset-2">
           </br>
@@ -382,6 +384,77 @@
     </div>
   </section>
   <!-- End NOVA SIM Section -->
+
+  <!-- DUNE Intro Section -->
+  <section class="color-dark" id="dune">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h1><img src="assets/img/dune.png" style="max-height:270px;"/></h1>
+          <h4>
+            <p align="justify" style="padding-left:50px; padding-right:50px; color:white;">The Deep Underground Neutrino Experiment (DUNE) will consist of two underground detectors exposed to the world’s most intense neutrino beam. Equipped with a far detector that consists of four 10 kt liquid argon time projection chambers and a near detector at a distance of 1300 km, this international collaboration aims to enter the precision era of neutrino oscillations. Its primary objectives are measurements of the mixing angles \(\theta_{13}\) and \(\theta_{23}\) , the charge-parity violating phase and determine the neutrino mass ordering. In addition, DUNE is sensitive to neutrinos from core-collapsed supernovae and will conduct proton decay searches.</p>
+            <img id="dune_fig_1" src="assets/img/researchPlots/dune/logo.png" style="max-height:300px;"/>
+            </br>
+            </br>
+            <p align="justify" style="padding-left:50px; padding-right:50px; color:white;">Our graduate student Beatriz Tapia Oregui is currently working on the photon detection simulation of the DUNE project.</p>
+          </h4>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--End DUNE Introduction Section -->
+
+  <!-- DUNE OP Sim Section -->
+  <section class="for-full-back color-white " id="novaopsim">
+    <div class="container">
+      <div class="row text-center">
+
+        <div class="col-md-12">
+          <h1 style="font-weight:bold;">DUNE PhotoDetection Simulation</h1>
+        </div>
+        </br>
+        </br>
+        </br>
+
+        <div class="col-md-12">
+          <h4 align="justify" style="padding-left:50px; padding-right:50px; ">
+            There are two possible geometries under consideration for the far detectors 10kt liquid argon TPCs. They are denoted with the names Single Phase and Dual Phase geometry, which refers to the amount of matter states of the filling scintillator material, in this case: argon. The Single Phase geometry would only contain liquid argon and the Dual Phase would have mainly liquid argon but also some argon in gas form at the top of the detector.
+          </h4>
+        </div>
+
+        <img id="dune_fig_2" src="assets/img/researchPlots/dune/apa.png" style="max-height:500px;"/>
+
+        <div class="col-md-8 col-md-offset-2">
+          </br>
+          </br>
+          <p style="padding-left:50px; padding-right:50px; ">Figure 1: A portion of DUNE’s Single Phase geometry TPC. APA = Anode Plane Assembly. CPA = Cathode Plane Assembly.</p>
+        </div>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        <div class="col-md-12">
+          <img id="dune_fig_3" src="assets/img/researchPlots/dune/dualphase.png" style="max-height:400px;"/>
+          <img id="dune_fig_4" src="assets/img/researchPlots/dune/dualphase1.png" style="max-height:400px;"/>
+          <div class="col-md-8 col-md-offset-2">
+            </br>
+            </br>
+            <p style="padding-left:50px; padding-right:50px; ">Figure 2: Dual Phase TPC design and working principle.</p>
+          </div>
+        </div>
+
+
+        <div class="col-md-12">
+          <h4 align="justify" style="padding-left:50px; padding-right:50px; ">
+            Our main focus is to work on computer simulations of optical photons in liquid argon, which will be of great importance for DUNE. Despite the immense physics potential of the DUNE experiment, the current state of simulations of optical photons propagating through liquid argon is not satisfying. Light detection is key to resolve time reconstruction and to apply crucial trigger conditions for proton decay and supernova neutrino searches. We need to understand the light attenuation and volume scale problems involved in going from the current relatively small liquid argon detectors to a 17 kt chamber. With my work I want to contribute solving some of these open questions and providing information for the final decision on the light collection technique and design. At the time, it is not clear which photon detectors to use: PMTs or SiPMs, as well as whether to increase photon collection area with optical fibers, acrylic plates, etc. 
+          </h4>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- End DUNE Op SIM Section -->
 
   <!--footer Section -->
   <div class="for-full-back" id="footer" style="padding-bottom:10px;">
